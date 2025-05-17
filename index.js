@@ -42,7 +42,7 @@ app.get("/weather", async (req, res) => {
 app.listen(port, (error) => {
   if (error) {
     console.log("error connecting server");
-    process.exit(1);
+    //process.exit(1);
   }
   console.log(`server connected at http://localhost:${port}`);
 });
