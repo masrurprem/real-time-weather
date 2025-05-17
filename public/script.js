@@ -107,9 +107,7 @@ navigator.geolocation.getCurrentPosition(async (position) => {
   showSpinner();
   overlayOn();
 
-  const response = await fetch(
-    `http://localhost:3000/weather?city=${location}`
-  );
+  const response = await fetch(`/weather?city=${location}`);
 
   const weatherData = await response.json();
   console.log("the response obj to client: ", weatherData.city);
