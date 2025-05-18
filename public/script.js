@@ -48,7 +48,7 @@ submitForm.addEventListener("submit", async (e) => {
   console.log(requested_city);
 
   const response = await fetch(
-    `http://localhost:3000/weather?city=${requested_city}`
+    `/weather?city=${requested_city}`
   );
 
   const weatherData = await response.json();
