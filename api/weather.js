@@ -1,18 +1,5 @@
-const express = require("express");
-const app = express();
-const port = 3000;
-const path = require("path");
-
-//middleware
-app.use(express.static("public"));
-
-// default frontend homepage
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "/index.html"));
-});
-
 // weather route handling
-app.get("/weather", async (req, res) => {
+export default async function handler(req, res) {
   const apiKey = "232f36b248a6d3f4b730230b5203f015";
   const city_name = req.query.city;
 
@@ -36,13 +23,4 @@ app.get("/weather", async (req, res) => {
     windSpeed: data.wind.speed,
     weathIcon: data.weather[0].main,
   });
-});
-
-// server  listening from port
-app.listen(port, (error) => {
-  if (error) {
-    console.log("error connecting server");
-    //process.exit(1);
-  }
-  console.log(`server connected at http://localhost:${port}`);
-});
+}
