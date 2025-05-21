@@ -48,7 +48,7 @@ submitForm.addEventListener("submit", async (e) => {
   console.log(requested_city);
 
   const response = await fetch(
-    `/weather?city=${requested_city}`
+    `https://real-time-weather-henna.vercel.app/weather?city=${requested_city}`
   );
 
   const weatherData = await response.json();
