@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const port = 3000;
 const path = require("path");
 
 //middleware
@@ -38,11 +37,3 @@ app.get("/weather", async (req, res) => {
   });
 });
 
-// server  listening from port
-app.listen(port, (error) => {
-  if (error) {
-    console.log("error connecting server");
-    //process.exit(1);
-  }
-  console.log(`server connected at http://localhost:${port}`);
-});
