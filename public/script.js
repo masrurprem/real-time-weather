@@ -108,7 +108,7 @@ navigator.geolocation.getCurrentPosition(async (position) => {
   overlayOn();
 
   const response = await fetch(
-    `https://real-time-weather-one.vercel.app/api/weather?city=${location}`
+    `https://real-time-weather-one.vercel.app/api/weather/getwater?city=${location}`
   );
 
   const weatherData = await response.json();
